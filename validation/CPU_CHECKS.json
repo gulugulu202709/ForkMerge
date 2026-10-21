@@ -1,0 +1,33 @@
+{
+  "status": "CPU_PREPARATION_CHECKS_PASS",
+  "actual_recordings_received": 0,
+  "synthetic_fixtures_only": true,
+  "native_model_imported": false,
+  "cuda_initialized": false,
+  "gpu_device_seconds": 0,
+  "cloud_calls": 0,
+  "missing_data_refusal": {
+    "stage": "REFUSED_BEFORE_GPU",
+    "phase": "paired",
+    "allowed": false,
+    "reason": "WAITING_VERIFIED_RECORDINGS",
+    "gpu_device_seconds": 0
+  },
+  "empirical_measurement_calibrated": false,
+  "native_daily_renderer_tested": false,
+  "native_daily_training_tested": false,
+  "no_method_results": true,
+  "tests": {
+    "run": 77,
+    "passed": 77,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "cpu_seconds": 17.467878,
+  "validation_scope": "Review export CPU software tests with synthetic fixtures, not real-video experiments.",
+  "code_changes_from_development_snapshot": [
+    "External runtime paths are configured through environment variables.",
+    "Generated-report documentation links point to review-export documents."
+  ]
+}

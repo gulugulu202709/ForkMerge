@@ -1,0 +1,655 @@
+{
+  "version": 1,
+  "dataset_id": "everyday_calibration_9_PENDING_ACTUAL_RECORDINGS",
+  "planned": true,
+  "status": "PROSPECTIVE_TEMPLATE_NOT_DATA",
+  "observation_vocabularies": {
+    "manual": [
+      "empty",
+      "nonempty",
+      "clean",
+      "marked",
+      "clear",
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "cyan",
+      "blue",
+      "purple",
+      "magenta",
+      "other"
+    ],
+    "colour": [
+      "clear",
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "cyan",
+      "blue",
+      "purple",
+      "magenta",
+      "other"
+    ]
+  },
+  "clips": [
+    {
+      "id": "cup_A",
+      "file": "cup_A.mp4",
+      "recording_id": null,
+      "unit_id": "cup_calibration",
+      "split": "calibration",
+      "scenario": "cup",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "replace_cup",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "manual",
+          "truth": null
+        },
+        "right": {
+          "kind": "manual",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "cup_B",
+      "file": "cup_B.mp4",
+      "recording_id": null,
+      "unit_id": "cup_calibration",
+      "split": "calibration",
+      "scenario": "cup",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "replace_cup",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "manual",
+          "truth": null
+        },
+        "right": {
+          "kind": "manual",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "cup_C",
+      "file": "cup_C.mp4",
+      "recording_id": null,
+      "unit_id": "cup_calibration",
+      "split": "calibration",
+      "scenario": "cup",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "replace_cup",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "manual",
+          "truth": null
+        },
+        "right": {
+          "kind": "manual",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "teapot_A",
+      "file": "teapot_A.mp4",
+      "recording_id": null,
+      "unit_id": "teapot_calibration",
+      "split": "calibration",
+      "scenario": "teapot",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "wash_refill_pot",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "manual",
+          "truth": null
+        },
+        "right": {
+          "kind": "manual",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "teapot_B",
+      "file": "teapot_B.mp4",
+      "recording_id": null,
+      "unit_id": "teapot_calibration",
+      "split": "calibration",
+      "scenario": "teapot",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "wash_refill_pot",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "manual",
+          "truth": null
+        },
+        "right": {
+          "kind": "manual",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "teapot_C",
+      "file": "teapot_C.mp4",
+      "recording_id": null,
+      "unit_id": "teapot_calibration",
+      "split": "calibration",
+      "scenario": "teapot",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "replace_lid",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "manual",
+          "truth": null
+        },
+        "right": {
+          "kind": "manual",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "candy_A",
+      "file": "candy_A.mp4",
+      "recording_id": null,
+      "unit_id": "candy_calibration",
+      "split": "calibration",
+      "scenario": "candy",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "empty_refill_box",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "count",
+          "truth": null
+        },
+        "right": {
+          "kind": "count",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "candy_B",
+      "file": "candy_B.mp4",
+      "recording_id": null,
+      "unit_id": "candy_calibration",
+      "split": "calibration",
+      "scenario": "candy",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "empty_refill_box",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "count",
+          "truth": null
+        },
+        "right": {
+          "kind": "count",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    },
+    {
+      "id": "candy_C",
+      "file": "candy_C.mp4",
+      "recording_id": null,
+      "unit_id": "candy_calibration",
+      "split": "calibration",
+      "scenario": "candy",
+      "history_end": null,
+      "stage_times": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actions": [
+        "observe",
+        "interact",
+        "empty_refill_box",
+        "occlude"
+      ],
+      "future_end": null,
+      "windows": {
+        "left": [
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null
+        ]
+      },
+      "rois": {
+        "left": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "right": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "readouts": {
+        "left": {
+          "kind": "count",
+          "truth": null
+        },
+        "right": {
+          "kind": "count",
+          "truth": null
+        }
+      },
+      "verified": {
+        "uncut": false,
+        "history_actions_visible": false,
+        "outcomes_visible": false,
+        "actual_not_planned": false,
+        "camera_stable": false,
+        "layout_matched": false
+      },
+      "source_note": "PENDING actual observations; planned action names require verification."
+    }
+  ],
+  "units": [
+    {
+      "id": "cup_calibration",
+      "scenario": "cup",
+      "split": "calibration",
+      "clip_ids": [
+        "cup_A",
+        "cup_B",
+        "cup_C"
+      ]
+    },
+    {
+      "id": "teapot_calibration",
+      "scenario": "teapot",
+      "split": "calibration",
+      "clip_ids": [
+        "teapot_A",
+        "teapot_B",
+        "teapot_C"
+      ]
+    },
+    {
+      "id": "candy_calibration",
+      "scenario": "candy",
+      "split": "calibration",
+      "clip_ids": [
+        "candy_A",
+        "candy_B",
+        "candy_C"
+      ]
+    }
+  ]
+}
