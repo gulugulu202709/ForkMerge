@@ -1,0 +1,127 @@
+{
+  "version": "direct-canonical-v1",
+  "date": "2026-10-15",
+  "evaluation_type": "simulation_only",
+  "source_root": "external_source",
+  "method_source": "code/models.py; continuous-response adaptation, not an original count-task reproduction",
+  "siglip_weight_dir": "external_source/weights/siglip2",
+  "draws": [
+    0,
+    1
+  ],
+  "seeds": [
+    611,
+    612,
+    613
+  ],
+  "learning_rates": [
+    0.001,
+    0.0003
+  ],
+  "epochs": 1200,
+  "updates_per_fit": 9600,
+  "batch_families": 32,
+  "hidden": 128,
+  "pair_lambda": 1.0,
+  "arms": {
+    "tf_plain": {
+      "architecture": "transformer",
+      "objective": "plain",
+      "reuse": "plain"
+    },
+    "tf_pair": {
+      "architecture": "transformer",
+      "objective": "paired",
+      "reuse": "paired"
+    },
+    "tf_scope": {
+      "architecture": "transformer",
+      "objective": "scope"
+    },
+    "canonical_scope": {
+      "architecture": "canonical",
+      "objective": "scope"
+    },
+    "decoded_pair": {
+      "architecture": "gru",
+      "objective": "paired",
+      "reuse": "paired",
+      "encoder": "decoded",
+      "role": "strong public-RGB instrument-decoder reference; different representation, not equal perceptual/parameter budget"
+    }
+  },
+  "train_source": "same original256 training and64 validation families per draw; identical frozen SigLIP2 dense features and9 target labels; train-only normalization; no extra pre-action/state/gate labels",
+  "adaptation": "current canonical+protected-witness architecture, projected SigLIP2 tokens, prefix0:6, canonical calibration0 plus repair/post6:12;3 action-query states64wide and3 load responses each. Continuous standardized response MSE replaces categorical CE/CDF; equal-query and surviving-query contrast loss uses existing post-outcome labels only; pre-action auxiliary loss omitted for all arms. This is a prespecified continuous-response adaptation, not a byte-identical old count-task reproduction, oblique operator, active test policy or world model.",
+  "matching": "same task training data/targets, encoder/cache,1200epochs/9600updates,2LRsearch, seeds/sample order, AdamW and validation standardized response MSE. Existing exact plain/paired fits reused, no retraining/tuning. Shared input projection initialized identically; full architecture parameters/FLOPs not claimed identical. tf_scope isolates objective vs architecture.",
+  "confirmation_data_seed": 10151571,
+  "confirmation_families_per_draw": 512,
+  "train_stiffness_N_mm": [
+    600,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200
+  ],
+  "test_stiffness_N_mm": [
+    650,
+    750,
+    850,
+    950,
+    1050,
+    1150
+  ],
+  "test_splits": [
+    "seen_repair",
+    "partial_patch",
+    "brace_install"
+  ],
+  "heldout_operations": [
+    "partial_patch",
+    "brace_install"
+  ],
+  "data_protocol": "same old generator/ranges, fresh base tuples excluding ALL original train/validation/test and both new draws; three matched panels share new families. Physically equivalent post-repair states may recur intentionally; family-disjoint does not mean every effective state unique. Original test data are development evidence, excluded from confirmation.",
+  "forces_N": [
+    230,
+    270,
+    310
+  ],
+  "decision": {
+    "opening_limit_mm": 0.35,
+    "service_force_N": 310,
+    "repair_cost": [
+      0.0,
+      0.15,
+      1.0
+    ],
+    "unsafe_penalty": 10.0,
+    "tie_break": "keep,retighten,replacement",
+    "scope": "fixed simulation utility without abstention; not real safety standard"
+  },
+  "selection": "earliest minimum validation standardized response MSE within1200epochs, then best of same2LR, ties smallerLR; all newfits and reusedfits frozen before ANY confirmation-model predictions",
+  "primary_controls": [
+    "tf_pair",
+    "tf_scope"
+  ],
+  "secondary_strong_reference": "decoded_pair; report explicitly whether any visual gain also beats this strongest prior ordinary readout reference; gate cannot support a broad best-method claim without it",
+  "primary_outcomes": [
+    "realized_repair_regret",
+    "false_approval_conditional_true_unsafe",
+    "executed_maintenance_unsafe"
+  ],
+  "pilot_continue_gate": {
+    "regret_relative_reduction_min": 0.1,
+    "noninferiority_false_approval_margin": 0.005,
+    "noninferiority_maintenance_unsafe_margin": 0.001,
+    "nonworse_paired_cells_per_operation": 5,
+    "bootstrap_replicates": 4000,
+    "bootstrap_seed": 10151572,
+    "bootstrap_upper_quantile": 0.9875,
+    "rule": "For BOTH controls and BOTH heldout operations: >=10% lower mean realized repair regret, at least5/6 draw-seed cells nonworse regret, and family-cluster bootstrap upper bound of regret difference<0. Safety noninferiority point differences<=registered margins for each operation and no more than1/6 draw-seed cells exceeding those margins. Bootstrap averages technical seeds first and resamples physical families within draw using same family indices across arms/operations;98.75% upper bounds adjust4 planned regret contrasts. Descriptive pilot screen, not general safety/novelty proof. Otherwise STOP_NO_EXTRA_BENEFIT_IN_THIS_PILOT. No claim of universality or architecture necessity; only extra benefit in declared simulation."
+  },
+  "empty_population_policy": "Inherited diagnostic ratios may encode empty denominator as0; no benefit gate can pass if any heldout unsafe,robust-unsafe,equivalent or protected population is empty. Such case is INCONCLUSIVE_EMPTY_POPULATION.",
+  "gpu_wall_limit_s": 10800,
+  "max_gpus": 2,
+  "no_test_retuning": true
+}

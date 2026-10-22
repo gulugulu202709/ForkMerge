@@ -24,6 +24,8 @@ prep-stage/
 *.pth
 *.safetensors
 *.npz
+!experiments/screw_repair/artifacts/data/**/*.npz
+!experiments/screw_repair/artifacts/predictions/**/*.npz
 *.zip
 *.log
 .DS_Store

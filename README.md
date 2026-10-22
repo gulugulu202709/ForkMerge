@@ -1,57 +1,48 @@
-# ForkMerge
+# ForkMerge — research handoff
 
-Research prototype for selective history erasure and protection in video prediction.
+[中文入门](README.zh-CN.md) · [接手指南](docs/HANDOFF_ZH.md) · [Code map](docs/CODE_MAP.md) · [Evidence status](docs/EVIDENCE_STATUS.md)
 
-**Current status: CPU preparation tests only. No real-video training, generated-video comparison, or method-efficacy result is available.** The 77 tests in this snapshot are software tests on synthetic fixtures, not 77 video experiments. This repository is not a completed benchmark or a final paper implementation.
+This repository contains a reproducible **archived screw simulation** and a **video-memory prototype awaiting real-video validation**. It is not a completed paper implementation or evidence of method superiority.
 
-## Implemented comparison
+## Replay actual archived outputs: CPU, no server account
 
-Both arms use the same ordinary recurrent updater, frozen Wan2.1-VACE-1.3B generator, 64 x 1536 memory tokens, data cache, initialization seeds, 32-update schedule and sampling settings:
+Use Python 3.12 in a virtual environment. Activate with `source .venv/bin/activate` on Linux/macOS or `.venv\Scripts\Activate.ps1` in PowerShell.
 
-- `paired`: proper flow loss plus whole-video paired residual supervision.
-- `paired_worst_witness`: the same updater and losses, with an additional worst-region flow-distance contrast term over left, right and whole-video masks.
+```bash
+python -m venv .venv
+# Activate the environment before the following commands.
+python -m pip install -r requirements-replay.txt
+python tools/reproduce_screw.py
+```
 
-The masks describe readouts from one recorded future. They are not three counterfactual intervention rollouts. Changes in saved memory tensors alone do not establish semantic erasure or protection. The new term may amount to ordinary loss reweighting; incremental value remains untested.
+The release includes 90 actual stored prediction files, six simulator audit arrays, scientific source, frozen selection metadata and original results (about 8 MB). The script checks SHA-256, reruns physical decision evaluation and statistics, and compares all 90 cells and eight contrasts to the recorded summary. Only NumPy is needed. See [the experiment README](experiments/screw_repair/README.md).
 
-The three prospective controlled cases are cup replacement with a remaining spill mark, teapot washing/refilling with a separate receiver glass, and candy-box emptying/refilling with removed objects remaining outside. Planned outcomes must never substitute for observed labels.
+Expected output: `runtime/screw-replay/VERIFICATION.json` with status `VERIFIED_ARCHIVED_SIMULATION_REPLAY`. The original decision remains **`STOP_NO_EXTRA_BENEFIT_IN_THIS_PILOT`**. These are actual simulation outputs, not real-world screw videos or generated-video results. Full RGB sequences, frozen visual features and checkpoints are absent, so this is evaluation replay rather than full retraining reproduction.
 
-## CPU checks
+Existing output directories are never overwritten; use `--output runtime/another-replay` for another run.
 
-Use Linux, Python 3.10 or newer, and the dependencies in `requirements.txt`. Native generation dependencies are separate.
+## Latest prototype: synthetic CPU interface check
 
-```sh
-CUDA_VISIBLE_DEVICES="" OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 \
-  python -m unittest discover -s pipeline/tests -v
+```bash
+python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements-cpu-tested.txt
+python tools/smoke_cpu.py
 python -m pipeline.entry status
+python -m unittest discover -s pipeline/tests -v
 ```
 
-Without actual verified recordings, status must report `WAITING_VERIFIED_RECORDINGS`. CPU fixtures never produce method results. Linux is required for the deployment guard; no GPU or external API is needed for these tests.
+`runtime/cpu-smoke/` contains actual saved memory tensors from two identically initialized ordinary updaters, each taking one CPU optimizer step on seeded random inputs. An artificial tensor slice exercises the loss API. **No video generator runs, no videos are produced, and tensor changes do not establish semantic erasure/protection or performance.** Memory size remains 64 × 1536. Most software tests also use synthetic fixtures.
 
-## Data and admission
+The prototype arms are `paired` and `paired_worst_witness`: the same ordinary updater and paired flow supervision, with an additional worst-readout-region relation term in the latter. This may be ordinary loss reweighting; incremental value remains untested. TinyHistory is not integrated.
 
-`recording/pipeline_annotations_template.json` is prospective: actual readings and times are null and all verification flags are false. It cannot admit training. See [the source schema](pipeline/CONTRACT.md), [protocol assumptions](docs/PROTOCOL.md), and [operator instructions](docs/OPERATOR_ZH.md).
+## Continue research
 
-The nine calibration clips are excluded from formal testing. Formal train/dev/test recordings must be disjoint. Calibration checks, a privileged renderer diagnostic, observed action/target visibility, and the existing cost guard must pass before a model comparison. Privileged diagnostics use the true endpoint and are not method predictions. The ordinary arm runs first; all-correct reviewed test outputs stop the candidate arm. Underfitting, unreadable outputs, missing data or exhausted budgets remain inconclusive.
+- Start with [the handoff guide](docs/HANDOFF_ZH.md), [code map](docs/CODE_MAP.md) and [missing evidence/resources](docs/EVIDENCE_STATUS.md).
+- Use [the source contract](pipeline/CONTRACT.md) and [annotation template](recording/pipeline_annotations_template.json) for real recordings. The template is prospective and cannot admit training. Nine calibration clips are separate from at least 27 disjoint formal train/dev/test clips; minimum counts are not statistical sufficiency.
+- CPU intake/calibration/review use `python -m pipeline.entry`. Without recordings, status reports `WAITING_RECORDINGS`; its phase gates report `WAITING_VERIFIED_RECORDINGS`.
+- Native video stages require Linux, separately installed [VACE](https://github.com/ali-vilab/VACE) at commit `48eb44f1c4be87cc65a98bff985a26976841e9f3`, Wan2.1-VACE-1.3B weights, verified recordings, readout/visibility review and authentic settled budget records. Configure `FORKMERGE_VACE_REPO`, `FORKMERGE_MODEL_DIR`, `FORKMERGE_BUDGET_PARENT`. Native generation/backward on the proposed cases remains unvalidated.
+- The native guard is the original campaign's once-only budget continuation, **not a generic fresh-run trainer**. A new independent campaign needs a new explicit protocol and budget entrypoint. Do not fabricate old receipts or bypass data/review checks. CPU replay/setup needs none of these private records.
 
-## Native model integration
+The earlier canonical-state plus protected-witness model is in `experiments/screw_repair/code/models.py`; the latest ordinary updater is in `pipeline/model.py`. Their tasks/results are distinct. [Handoff verification](validation/HANDOFF_CHECKS.json) records the tested environment and checks; it is not new model-efficacy evidence.
 
-Download upstream [VACE](https://github.com/ali-vilab/VACE) and its Wan2.1-VACE-1.3B weights separately, respecting upstream terms. The integration was developed against VACE commit `48eb44f1c4be87cc65a98bff985a26976841e9f3`; native generation/training on the new cases has not been validated.
-
-Configure external paths without editing source:
-
-```sh
-export FORKMERGE_VACE_REPO=/path/to/VACE
-export FORKMERGE_MODEL_DIR=/path/to/Wan2.1-VACE-1.3B
-export FORKMERGE_BUDGET_PARENT=/path/to/existing/budget/run
-```
-
-The native launch guard retains the original once-only budget continuation requirements. This review export is not a stand-alone fresh training campaign: absence of authentic, settled budget records blocks native launch. Do not fabricate successful receipts or bypass source/review checks. Model weights, real recordings, credentials and private operational logs are not distributed here.
-
-## Layout
-
-- `pipeline/intake.py`, `measurement.py`: verified source intake and fixed readout questions.
-- `pipeline/model.py`, `worker.py`, `spine.py`: ordinary updater, supervision comparison and native generator integration.
-- `pipeline/policy.py`, `guard.py`, `costs.py`: admission, stop conditions and accounting.
-- `pipeline/tests/`: synthetic CPU software tests.
-
-Third-party acknowledgements are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). No paper acceptance or method-performance claim is made.
+Retain upstream terms and attribution: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). No project-wide distribution license has been selected. No acceptance or method-performance claim is made.

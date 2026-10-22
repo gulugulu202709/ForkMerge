@@ -1,0 +1,75 @@
+{
+  "scope": "Research handoff software and archived-simulation replay; no new efficacy experiment",
+  "fresh_virtual_environment": true,
+  "python": "3.12.14",
+  "platform": "win32",
+  "packages": {
+    "numpy": "1.26.4",
+    "Pillow": "13.0.0",
+    "opencv-python-headless": "4.11.0.86",
+    "torch": "2.5.1+cpu"
+  },
+  "software_tests": {
+    "command": "python -m unittest discover -s pipeline/tests -v",
+    "passed": 83,
+    "failed": 0,
+    "skipped": 0
+  },
+  "dependency_check": "pip check: no broken requirements",
+  "archived_replay": {
+    "status": "VERIFIED_ARCHIVED_SIMULATION_REPLAY",
+    "source_experiment": "direct_compare_20261015",
+    "prediction_files": 90,
+    "cells": 90,
+    "decision": "STOP_NO_EXTRA_BENEFIT_IN_THIS_PILOT",
+    "mismatches": [],
+    "numeric_tolerance": {
+      "relative": 1e-09,
+      "absolute": 1e-10
+    },
+    "new_training": false,
+    "new_model_inference": false,
+    "gpu_device_seconds": 0,
+    "real_world_video_evidence": false,
+    "scope": "Archived instrumented simulation; private simulator states are evaluation-only, never visual model inputs."
+  },
+  "synthetic_smoke": {
+    "status": "SYNTHETIC_CPU_INTERFACE_CHECK",
+    "memory_shape": [
+      3,
+      64,
+      1536
+    ],
+    "identical_initialization": true,
+    "cuda_initialized": false,
+    "video_generated": false,
+    "method_efficacy_result": false
+  },
+  "missing_recordings_status": "WAITING_RECORDINGS",
+  "privacy_findings": [],
+  "all_96_npz_byte_identical_to_original": true,
+  "clean_git_checkout": {
+    "method": "git checkout-index from staged tree with core.autocrlf=true",
+    "software_tests_passed": 83,
+    "failed": 0,
+    "seconds": 49.241,
+    "archived_replay_match": true
+  },
+  "native_video_generation_tested": false,
+  "native_video_backward_tested": false,
+  "real_recordings_received_in_pilot_snapshot": 0,
+  "new_gpu_device_seconds": 0,
+  "cloud_calls": 0,
+  "original_budgets_changed": false,
+  "limitations": [
+    "Archived predictions permit evaluation replay, not checkpoint-to-prediction retraining reproduction.",
+    "Latest smoke uses random tensors and an artificial readout, not the video generator.",
+    "Native Linux stages and fresh independent training entrypoint are not validated/implemented by this handoff."
+  ],
+  "review": {
+    "kind": "fresh same-family read-only software review",
+    "remaining_critical": 0,
+    "remaining_important": 0,
+    "scientific_acquittal": false
+  }
+}

@@ -1,0 +1,2 @@
+# Numeric replay only: no video model, torch, CUDA or cloud API.
+numpy==1.26.4

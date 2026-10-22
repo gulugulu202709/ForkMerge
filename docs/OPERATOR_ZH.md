@@ -1,6 +1,6 @@
 # 视频到达后的接入与执行
 
-当前只准备代码，没有启动GPU。原始录像放在the compute host本轮目录 incoming/，或先交付本机由本任务复制；不改动/裁剪原片。
+本说明针对待录制的日常视频原型；已有螺丝仿真结果复算另见experiments/screw_repair/README.md。本次交接整理没有启动GPU。原始录像放在仓库根目录incoming/，机器可读标注为incoming/manifest.json；不改动/裁剪原片。CPU接入可本地运行，原生训练仍需Linux与真实预算记录。
 
 ## 我们负责补齐的实际标注
 

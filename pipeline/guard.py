@@ -1,5 +1,5 @@
 """Bounded later-stage continuation. CPU prerequisites run before any allocation."""
-import argparse,ctypes,fcntl,json,os,signal,subprocess,sys,time
+import argparse,ctypes,json,os,signal,subprocess,sys,time
 from pathlib import Path
 import shutil
 from . import config as C
@@ -32,6 +32,10 @@ def run_phase(phase,root=C.ROOT):
     gate=validate_inputs(root,phase)
     if not gate['allowed']:
         return {'stage':'REFUSED_BEFORE_GPU','phase':phase,**gate,'gpu_device_seconds':0}
+    if sys.platform!='linux':
+        return {'stage':'REFUSED_BEFORE_GPU','phase':phase,'allowed':False,
+                'reason':'NATIVE_LAUNCH_REQUIRES_LINUX','gpu_device_seconds':0}
+    import fcntl
     if str(root)!=str(C.ROOT):raise RuntimeError('native root cannot be a synthetic test directory')
     parent=C.PARENT;prior=budget_events(parent/'evidence/later_learning_events.jsonl')
     if len(prior)!=2 or prior[0]['event']!='start' or prior[1]['event']!='end' or prior[1]['exit_code']!=0:

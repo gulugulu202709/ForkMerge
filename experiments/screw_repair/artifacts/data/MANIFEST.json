@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "draw": 0,
+      "split": "seen_repair",
+      "families": 512,
+      "pixel_reference_MAE_mm": 2.0698120463796186e-07,
+      "pixel_reference_max_mm": 4.9899179890178225e-05,
+      "pixel_decision_agreement": 1.0,
+      "unsafe_keep_cases": 512,
+      "unsafe_keep_families": 144,
+      "public_sha256": "15c9a5252de0615da6f4038c2e8905a3917c348e0600088bfb1b73e825d4e129",
+      "audit_sha256": "c3be80b652af46a391e79ec53d9ecd9ca050dfae54038de9e754a95454977964"
+    },
+    {
+      "draw": 0,
+      "split": "partial_patch",
+      "families": 512,
+      "pixel_reference_MAE_mm": 9.620568779138939e-08,
+      "pixel_reference_max_mm": 2.3321864135450454e-06,
+      "pixel_decision_agreement": 1.0,
+      "unsafe_keep_cases": 136,
+      "unsafe_keep_families": 43,
+      "public_sha256": "d4043e24d2ab0d8333c3e48463f04a84afe93877b0cbc0332bf762d9049e1d79",
+      "audit_sha256": "0dacd59092d90418b922da75f617d05289cb62bcb12619100e39a25f282dca44"
+    },
+    {
+      "draw": 0,
+      "split": "brace_install",
+      "families": 512,
+      "pixel_reference_MAE_mm": 1.4002204184305356e-07,
+      "pixel_reference_max_mm": 4.181461306762557e-06,
+      "pixel_decision_agreement": 1.0,
+      "unsafe_keep_cases": 78,
+      "unsafe_keep_families": 39,
+      "public_sha256": "41a46a0bdbc2ec9d78131f08faefe306113e890a1b33f9b88582f574bb61a28b",
+      "audit_sha256": "b3f1b8530f5387498c9536601feaef6104ca9f25668dbc957db83b26278ad87a"
+    },
+    {
+      "draw": 1,
+      "split": "seen_repair",
+      "families": 512,
+      "pixel_reference_MAE_mm": 1.8722710366819866e-07,
+      "pixel_reference_max_mm": 1.8655633946207395e-05,
+      "pixel_decision_agreement": 1.0,
+      "unsafe_keep_cases": 536,
+      "unsafe_keep_families": 150,
+      "public_sha256": "50c09cff09da7e29ac7a7b8b75f29de3a5bfdaa1dd7d066142647db22b300504",
+      "audit_sha256": "75c08925742f215d59f205f08351645cde0126e593c49a58edb86b89d940465b"
+    },
+    {
+      "draw": 1,
+      "split": "partial_patch",
+      "families": 512,
+      "pixel_reference_MAE_mm": 9.82112101188403e-08,
+      "pixel_reference_max_mm": 2.727860783424685e-06,
+      "pixel_decision_agreement": 1.0,
+      "unsafe_keep_cases": 166,
+      "unsafe_keep_families": 58,
+      "public_sha256": "4f3d5bfda17ab9a04bd5b74f62009f986b76fb9f0019d4c7bce72cef791d9ad0",
+      "audit_sha256": "7aa1142eb8c2f5f7db08854d42a1b3fbfa8d33b7fb27be4b71595d93a70983c5"
+    },
+    {
+      "draw": 1,
+      "split": "brace_install",
+      "families": 512,
+      "pixel_reference_MAE_mm": 1.4547322014840443e-07,
+      "pixel_reference_max_mm": 5.153897740972635e-06,
+      "pixel_decision_agreement": 1.0,
+      "unsafe_keep_cases": 86,
+      "unsafe_keep_families": 43,
+      "public_sha256": "0c2626fba352b418ee057b906ff9b48449483d0ca3a42ed0f7d533bf1bd6c438",
+      "audit_sha256": "e3b64476c96dd8666f2a962c33fd21c80b173d6af5f168b93f555bd05da6e97f"
+    }
+  ],
+  "new_base_families": 1024,
+  "excluded_original_families": 896,
+  "no_base_overlap_with_any_original_split": true,
+  "panels_matched_not_independent": true,
+  "draw_sampling": "sequential without replacement, disjoint but coupled",
+  "protocol_sha256": "66150b45100e51b4f736e00149c91993ab6eed5b22dcab7d5916776c29e34d3a"
+}

@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Archived SHA-256 provenance must survive Git and Windows line-ending settings.
+experiments/screw_repair/** -text
+*.npz binary
